@@ -390,8 +390,10 @@
 
 @media (max-width: 850px) {
     .header_nav {
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
+        white-space: nowrap;
+        height: auto;
+        overflow-x: auto;
     }
 
     .header_nav a {

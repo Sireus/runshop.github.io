@@ -771,11 +771,10 @@ img {
 }
 @media (max-width: 850px) {
   .header_nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+    width: 100%;
+    white-space: nowrap;
+    height: auto;
+    overflow-x: auto;
   }
 
   .header_nav a {
