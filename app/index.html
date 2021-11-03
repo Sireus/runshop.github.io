@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,6 @@
 </head>
 <body>
     <div class="container">
-
-
         <header class="header">
             <div class="header_top">
                 <a class="logo">RunShop</a>
@@ -43,16 +41,16 @@
                         </h3>
                         <div class="sale_timer">
                             <div class="sale_time_day">
-                                <span class="count">28</span>
-                                <span class="days">дней</span>
-                            </div>
-                            <div class="sale_time_hour">
-                                <span class="count">08</span>
+                                <span class="count timer__hours">28</span>
                                 <span class="days">часов</span>
                             </div>
-                            <div class="sale_time_minutes">
-                                <span class="count">52</span>
+                            <div class="sale_time_hour">
+                                <span class="count timer__minutes">08</span>
                                 <span class="days">минут</span>
+                            </div>
+                            <div class="sale_time_minutes">
+                                <span class="count timer__seconds">52</span>
+                                <span class="days">секунд</span>
                             </div>
                         </div>
                     </div>
@@ -171,16 +169,16 @@
                     </p>
                     <div class="sale_timer">
                         <div class="sale_time_day">
-                            <span class="count">28</span>
-                            <span class="days">дней</span>
-                        </div>
-                        <div class="sale_time_hour">
-                            <span class="count">08</span>
+                            <span class="count timer__hours_two">28</span>
                             <span class="days">часов</span>
                         </div>
-                        <div class="sale_time_minutes">
-                            <span class="count">52</span>
+                        <div class="sale_time_hour">
+                            <span class="count timer__minutes_two">08</span>
                             <span class="days">минут</span>
+                        </div>
+                        <div class="sale_time_minutes">
+                            <span class="count timer__seconds_two">52</span>
+                            <span class="days">секунд</span>
                         </div>
                     </div>
                 </div>
@@ -188,4 +186,50 @@
     </div>
 
 </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const deadline = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 01);
+      let timerId = null;
+      function declensionNum(num, words) {
+        return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(num % 10 < 5) ? num % 10 : 5]];
+      }
+      function countdownTimer() {
+        const diff = deadline - new Date();
+        if (diff <= 0) {
+          clearInterval(timerId);
+        }
+        const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+        const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+        const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+        $hours.textContent = hours < 10 ? '0' + hours : hours;
+        $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+        $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+
+        const hoursTwo = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+        const minutesTwo = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+        const secondsTwo = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+        
+        $hoursTwo.textContent = hours < 10 ? '0' + hours : hours;
+        $minutesTwo.textContent = minutes < 10 ? '0' + minutes : minutes;
+        $secondsTwo.textContent = seconds < 10 ? '0' + seconds : seconds;
+        
+        $hours.dataset.title = declensionNum(hours, ['час', 'часа', 'часов']);
+        $minutes.dataset.title = declensionNum(minutes, ['минута', 'минуты', 'минут']);
+        $seconds.dataset.title = declensionNum(seconds, ['секунда', 'секунды', 'секунд']);
+      }
+      const $hours = document.querySelector('.timer__hours');
+      const $minutes = document.querySelector('.timer__minutes');
+      const $seconds = document.querySelector('.timer__seconds');
+
+      const $hoursTwo = document.querySelector('.timer__hours_two');
+      const $minutesTwo = document.querySelector('.timer__minutes_two');
+      const $secondsTwo = document.querySelector('.timer__seconds_two');
+      
+      countdownTimer();
+      timerId = setInterval(countdownTimer, 1000);
+    });
+  </script>
+
+
 </html>
