@@ -835,6 +835,27 @@ img {
   color: #828292;
   margin-bottom: 38px;
 }
+@media (max-width: 450px) {
+  .btn_email {
+    font-size: 23px;
+    padding: 17px 40px;
+  }
+
+  .btn_tg {
+    font-size: 20px;
+  }
+
+  .btn_viber {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .modal_social {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
 @media (max-width: 1230px) {
   .product {
     -webkit-box-orient: vertical;

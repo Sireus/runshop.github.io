@@ -473,7 +473,22 @@
 // Media
 
 @media (max-width: 450px) {
+    .btn_email {
+        font-size: 23px;
+        padding: 17px 40px;
+    }
 
+    .btn_tg {
+        font-size: 20px;
+    }
+    .btn_viber {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .modal_social {
+        display: flex;
+    }
 }
 
 
