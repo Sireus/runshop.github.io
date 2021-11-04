@@ -449,16 +449,6 @@
         border: 1px solid #E7F4D7;
     }
 
-    & img::after {
-        content: '-50%';
-        position: absolute;
-        top: 0;
-        display: flex;
-        width: 100px;
-        height: 100px;
-        background-color: red;
-    }
-
     &_info {
         max-width: 800px;
         display: flex;
