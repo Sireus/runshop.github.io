@@ -65,3 +65,103 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 }); // end ready
+
+function copyToClipboardOne(text){
+   var copytext = document.createElement('input');
+   
+   if (typeof text=='undefined') copytext.value = "AUTO SCAN Car FM Transmitter | (со скидкой) 769ГРН"
+   else copytext.value = text
+
+   var tooltip = document.getElementById("myTooltip");
+   tooltip.innerHTML = "Скопировано!";
+
+   document.body.appendChild(copytext)
+   copytext.select()
+   document.execCommand('copy')
+   document.body.removeChild(copytext)
+}
+
+function copyTopProduct(text){
+   var copytext = document.createElement('input');
+   
+   if (typeof text=='undefined') copytext.value = "Wireless Car Mount Charger | (со скидкой) Цена: 599ГРН"
+   else copytext.value = text
+
+   var tooltip = document.getElementById("copyProduct");
+   tooltip.innerHTML = "Скопировано!";
+
+   document.body.appendChild(copytext)
+   copytext.select()
+   document.execCommand('copy')
+   document.body.removeChild(copytext)
+}
+
+function copyToClipboardTwo(text){
+   var copytext = document.createElement('input');
+   
+   if (typeof text=='undefined') copytext.value = "Адаптер для быстрой зарядки 20w | (со скидкой) Цена: 300ГРН"
+   else copytext.value = text
+
+   var tooltip = document.getElementById("myTooltipTwo");
+   tooltip.innerHTML = "Скопировано!";
+
+   document.body.appendChild(copytext)
+   copytext.select()
+   document.execCommand('copy')
+   document.body.removeChild(copytext)
+}
+
+function copyToClipboardThree(text){
+   var copytext = document.createElement('input');
+   
+   if (typeof text=='undefined') copytext.value = "Беспроводные наушники inpods 12 | (со скидкой) Цена: 399ГРН"
+   else copytext.value = text
+
+   var tooltip = document.getElementById("myTooltipThree");
+   tooltip.innerHTML = "Скопировано!";
+
+   document.body.appendChild(copytext)
+   copytext.select()
+   document.execCommand('copy')
+   document.body.removeChild(copytext)
+}
+
+function copyToClipboardFour(text){
+   var copytext = document.createElement('input');
+   
+   if (typeof text=='undefined') copytext.value = "Компактный Power bank MICRONIK 10000 mAh | (со скидкой) Цена: 499ГРН"
+   else copytext.value = text
+
+   var tooltip = document.getElementById("myTooltipFour");
+   tooltip.innerHTML = "Скопировано!";
+
+   document.body.appendChild(copytext)
+   copytext.select()
+   document.execCommand('copy')
+   document.body.removeChild(copytext)
+}
+
+function outTopProduct() {
+   var tooltip = document.getElementById("copyProduct");
+   tooltip.innerHTML = "Копировать товар";
+}
+
+function outFunc() {
+   var tooltip = document.getElementById("myTooltip");
+   tooltip.innerHTML = "Копировать товар";
+}
+
+function outFuncTwo() {
+   var tooltip = document.getElementById("myTooltipTwo");
+   tooltip.innerHTML = "Копировать товар";
+}
+
+function outFuncThree() {
+   var tooltip = document.getElementById("myTooltipThree");
+   tooltip.innerHTML = "Копировать товар";
+}
+
+function outFuncFour() {
+   var tooltip = document.getElementById("myTooltipFour");
+   tooltip.innerHTML = "Копировать товар";
+}
